@@ -7,4 +7,4 @@ This challenge enables users to organize a work day schedule. We will use a work
 * Javascript
 * JQuery
 * Bootstrap
-## screenshot
+## Screenshot
