@@ -23,5 +23,32 @@ $(document).ready(function() {
     $("#block16 .description").val(localStorage.getItem("block16"));
     $("#block17 .description").val(localStorage.getItem("block17"));
     
-    //function for time block past,present, future with color code
+    //function for time block past,present, future with color code/color tags are located in CSS
+    function timeColor(){
+        var presentTime = moment().hour();
+
+        $(".time-block").each(function(){
+            var hourBlock = parseInt($(this).attr("id").split("block")[1]);
+
+            //adding class/past time will show grey
+            if (hourBlock < presentTime){
+                $(this).addClass("past");
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+            }
+            // to show ergency, current time will glow red
+            else if (hourBlock === presentTime){
+                $(this).removeClass("past");
+                $(this).addClass("present");
+                $(this).removeClass("future");
+            }
+            // if time is in future time block will glow green
+            else {
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+                $(this).addClass("future");
+            }
+        })
+    }
+    timeColor();
 });
