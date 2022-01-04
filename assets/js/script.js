@@ -9,7 +9,7 @@ $(document).ready(function() {
         var time = $(this).parent().attr("id"); 
 
         //save variables in local storage
-        localStorage.setItem(time, text);
+        localStorage.setItem(time, text)
     });
 
     //display saved local storage data
